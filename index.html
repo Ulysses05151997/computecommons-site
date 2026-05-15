@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Compute Commons — A Declaration for Community-Owned Infrastructure</title>
+    <meta name="description" content="A public-benefit distributed computing platform. Built by and for the Linux community.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --blood: #8B1A1A; --charcoal: #2D2D2D; --warm-gray: #F5F0E8; --medium-gray: #666; --cream: #FAF8F4; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'EB Garamond', Georgia, serif; color: var(--charcoal); background: var(--cream); line-height: 1.7; font-size: 18px; }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 24px; background: radial-gradient(ellipse at 20% 50%, rgba(139,26,26,0.06) 0%, transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(85,107,47,0.05) 0%, transparent 60%), var(--cream); border-bottom: 3px solid var(--blood); }
+        .hero-title { font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 700; color: var(--blood); letter-spacing: 0.04em; margin-bottom: 16px; line-height: 1.1; }
+        .hero-subtitle { font-size: clamp(1.1rem, 2vw, 1.4rem); font-style: italic; color: var(--medium-gray); margin-bottom: 48px; max-width: 520px; }
+        .hero-penguin { width: 180px; height: auto; margin-bottom: 48px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1)); }
+        .hero-mission { font-size: clamp(1.15rem, 1.8vw, 1.35rem); max-width: 720px; color: var(--charcoal); margin-bottom: 40px; }
+        .hero-cta { display: inline-block; padding: 16px 40px; background: var(--blood); color: #fff; font-family: 'EB Garamond', Georgia, serif; font-size: 1.15rem; font-weight: 600; text-decoration: none; letter-spacing: 0.03em; border: 2px solid var(--blood); transition: all 0.3s ease; }
+        .hero-cta:hover { background: transparent; color: var(--blood); }
+        .hero-byline { margin-top: 48px; font-size: 0.95rem; color: var(--medium-gray); }
+        .hero-byline strong { color: var(--charcoal); }
+        section { max-width: 760px; margin: 0 auto; padding: 80px 24px; }
+        section + section { border-top: 1px solid #ddd; }
+        h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--blood); margin-bottom: 32px; font-weight: 700; line-height: 1.2; }
+        p { margin-bottom: 20px; }
+        .highlight { background: var(--warm-gray); border-left: 4px solid var(--blood); padding: 24px 28px; margin: 32px 0; font-style: italic; font-size: 1.1rem; line-height: 1.8; }
+        .about-name { font-size: 1.5rem; font-weight: 700; color: var(--charcoal); margin-bottom: 8px; }
+        .about-title { font-style: italic; color: var(--medium-gray); margin-bottom: 24px; }
+        .download-section { background: var(--charcoal); color: #ccc; text-align: center; max-width: 100%; padding: 80px 24px; }
+        .download-section h2 { color: #fff; }
+        .download-section p { max-width: 600px; margin: 0 auto 32px; }
+        .download-btn { display: inline-block; padding: 18px 48px; background: var(--blood); color: #fff; font-family: 'EB Garamond', Georgia, serif; font-size: 1.2rem; font-weight: 600; text-decoration: none; letter-spacing: 0.03em; transition: all 0.3s ease; border: 2px solid var(--blood); }
+        .download-btn:hover { background: transparent; border-color: #fff; }
+        .download-details { margin-top: 24px; font-size: 0.9rem; color: #888; }
+        .connect-section { text-align: center; max-width: 100%; padding: 60px 24px; background: var(--warm-gray); }
+        .connect-section h2 { margin-bottom: 24px; }
+        .connect-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px 40px; margin-top: 24px; font-size: 1rem; }
+        .connect-links a { color: var(--blood); text-decoration: none; font-weight: 600; transition: opacity 0.2s; }
+        .connect-links a:hover { opacity: 0.7; }
+        footer { text-align: center; padding: 32px 24px; font-size: 0.85rem; color: var(--medium-gray); border-top: 1px solid #ddd; }
+        @media (max-width: 600px) { .hero { padding: 40px 20px; } section { padding: 48px 20px; } .hero-penguin { width: 140px; } }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1 class="hero-title">THE COMPUTE<br>COMMONS</h1>
+        <p class="hero-subtitle">The Future of Personal Computing</p>
+        <img src="idle-penguin.svg" alt="Idle — the Compute Commons penguin" class="hero-penguin">
+        <p class="hero-mission">A public-benefit distributed computing platform that coordinates underutilized storage, CPU, RAM, and GPU resources into a shared infrastructure layer — owned and governed by its community. Not a corporation. Not a startup. A commons.</p>
+        <a href="#read" class="hero-cta">Read the Declaration</a>
+        <p class="hero-byline">Conceived and authored by <strong>Ulysses Isa</strong> · May 2026</p>
+    </div>
+    <section>
+        <h2>The Community Built Everything. And Owns None of It.</h2>
+        <p>The Linux community won the most consequential technology war in history. Every supercomputer. Every cloud platform. Every AI training run. Android. The International Space Station. Smart TVs. Streaming devices. The kernel they wrote for free powers trillions of dollars in infrastructure.</p>
+        <p>Red Hat sold the support. IBM bought Red Hat for $34 billion. Google absorbed Linux into Android and Chrome OS. Microsoft — the company whose CEO called Linux "a cancer" in 2001 — now makes more money from Linux than any Linux company ever has, by running it inside Azure.</p>
+        <p>The community wrote the code. The corporations collected the check. And the pattern is about to repeat.</p>
+        <div class="highlight">When Microsoft offers roaming desktops, it is a product. When Google offers them, it is surveillance. When the community offers them, it is sovereignty. The difference is not the technology. It is who owns the infrastructure underneath.</div>
+    </section>
+    <section>
+        <h2>The Window Is Closing</h2>
+        <p>Every device is becoming a terminal. Chrome OS is already there — a browser with a login screen. Windows 365 runs your desktop in Microsoft's data center. Apple tightens the integration between device and iCloud with every release.</p>
+        <p>When that transition completes, the device in your hands is a screen that connects to someone else's computer. You own nothing. You compute at their pleasure, on their terms, subject to their surveillance, their pricing, and their content policies.</p>
+        <p>If the Linux community does not build a community-owned compute layer now, it will happen anyway — but you will pay for the privilege while having no data security and no privacy.</p>
+    </section>
+    <section>
+        <h2>Free Access Is the Growth Engine</h2>
+        <p>Every machine that connects to The Compute Commons is both a consumer and a contributor. A school's Chromebook fleet that accesses storage during class contributes idle CPU cycles overnight. A nonprofit's desktops contribute processing power on evenings and weekends. A developer's workstation contributes RAM and storage while the developer sleeps.</p>
+        <p>The more machines on the network, the more powerful it becomes. The more powerful it becomes, the more attractive it is. The more attractive it is, the more machines join. This is a flywheel, not a grant program.</p>
+        <p>Any operating system. Any distro. Any hardware vintage. All welcome. The person running a half-working custom kernel at 4 AM is exactly the person The Compute Commons is for.</p>
+    </section>
+    <section>
+        <h2>About the Author</h2>
+        <p class="about-name">Ulysses Isa</p>
+        <p class="about-title">JD · Former Senate Chief of Staff</p>
+        <p>I am not a kernel developer. I have never submitted a patch to the Linux source tree. I am a lawyer and a former Senate Chief of Staff who came to Linux out of necessity and stubbornness — old hardware that the manufacturers abandoned, and a refusal to pay for the privilege of being surveilled.</p>
+        <p>I have spent thirty years watching what happens to things that people build for free. Someone else packages them. Someone else sells them. Someone else gets the check. The Compute Commons is my attempt to do something about that — not as a technologist, but as someone who knows how institutions work, how power consolidates, and how communities lose control of the things they created.</p>
+        <p>I expect to hand this to a community that is smarter than me, more technically capable than me, and more stubborn than me — and watch them do what they have always done: make it work despite every reason it should not.</p>
+    </section>
+    <div class="download-section" id="read">
+        <h2>Read the Declaration</h2>
+        <p>30 pages. The political argument, the technical architecture, the growth model, the community pitch, honest risks, and a phased roadmap. Seven conceptual diagrams. No promises that can't be kept.</p>
+        <a href="ComputeCommons_Declaration_v2.pdf" class="download-btn" download>Download the PDF</a>
+        <p class="download-details">Version 2.0 · May 2026 · Free to share and distribute in its entirety</p>
+    </div>
+    <div class="connect-section">
+        <h2>Connect</h2>
+        <p>Ulysses Isa · ulysses.isa@gmail.com · (201) 455-4163</p>
+        <div class="connect-links">
+            <a href="https://github.com/Ulysses05151997" target="_blank">GitHub</a>
+            <a href="https://mastodon.social/@ulyssesisa" target="_blank">Mastodon</a>
+            <a href="https://www.reddit.com/user/Brilliant-Coffee7359" target="_blank">Reddit</a>
+            <a href="https://matrix.to/#/@ulyssesisa:matrix.org" target="_blank">Matrix</a>
+        </div>
+    </div>
+    <footer>&copy; 2026 Ulysses Isa — All Rights Reserved<br>This document may be freely shared and distributed in its entirety.</footer>
+</body>
+</html>
