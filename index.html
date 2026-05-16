@@ -51,6 +51,13 @@
         <p class="hero-mission">A public-benefit distributed computing platform that coordinates underutilized storage, CPU, RAM, and GPU resources into a shared infrastructure layer — owned and governed by its community. Not a corporation. Not a startup. A commons.</p>
         <a href="#read" class="hero-cta">Read the Declaration</a>
         <p class="hero-byline">Conceived and authored by <strong>Ulysses Isa</strong> · May 2026</p>
+        <div style="margin-top:40px;width:100%;max-width:520px;">
+            <div style="display:flex;border:2px solid #8B1A1A;background:#fff;overflow:hidden;">
+                <input type="text" id="searchBox" placeholder="Search the web privately with DuckDuckGo" style="flex:1;padding:12px 16px;border:none;font-family:'EB Garamond',Georgia,serif;font-size:1rem;outline:none;" onkeydown="if(event.key==='Enter'){let q=this.value.trim();if(q)window.open('https://duckduckgo.com/?q='+encodeURIComponent(q),'_blank');}">
+                <button onclick="let q=document.getElementById('searchBox').value.trim();if(q)window.open('https://duckduckgo.com/?q='+encodeURIComponent(q),'_blank');" style="padding:12px 20px;background:#8B1A1A;color:#fff;border:none;font-family:'EB Garamond',Georgia,serif;font-size:1rem;cursor:pointer;">Search</button>
+            </div>
+            <p style="font-size:0.8rem;color:#888;margin-top:8px;">Powered by DuckDuckGo · No tracking · No history</p>
+        </div>
     </div>
     <section>
         <h2>The Community Built Everything. And Owns None of It.</h2>
@@ -82,7 +89,7 @@
     <div class="download-section" id="read">
         <h2>Read the Declaration</h2>
         <p>30 pages. The political argument, the technical architecture, the growth model, the community pitch, honest risks, and a phased roadmap. Seven conceptual diagrams. No promises that can't be kept.</p>
-        <a href="ComputeCommons_Declaration_v2.pdf" class="download-btn" download>Download the PDF</a>
+        <a href="ComputeCommons_Declaration_v2.pdf" class="download-btn" target="_blank">Download the PDF</a>
         <p class="download-details">Version 2.0 · May 2026 · Free to share and distribute in its entirety</p>
     </div>
     <div class="connect-section">
