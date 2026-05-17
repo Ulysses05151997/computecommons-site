@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Compute Commons — Declaration</title>
+    <style>
+        :root {
+            --blood: #8B0000;
+            --charcoal: #1a1a1a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #111;
+            color: #ccc;
+            font-family: 'EB Garamond', Georgia, serif;
+            min-height: 100vh;
+        }
+        .header {
+            background: var(--charcoal);
+            padding: 24px;
+            text-align: center;
+            border-bottom: 2px solid var(--blood);
+        }
+        .header h1 {
+            color: #fff;
+            font-size: 1.6rem;
+            letter-spacing: 0.08em;
+        }
+        .header a {
+            color: var(--blood);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        .header a:hover { color: #fff; }
+        #pdf-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 100%;
+            height: auto !important;
+        }
+        .loading {
+            text-align: center;
+            padding: 60px;
+            color: #888;
+            font-size: 1.2rem;
+        }
+        .page-break {
+            border-bottom: 1px solid #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>THE COMPUTE COMMONS</h1>
+        <a href="/">← Back to computecommons.cloud</a>
+    </div>
+    <div id="pdf-container">
+        <div class="loading" id="loading">Loading the Declaration...</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs" type="module"></script>
+    <script type="module">
+        import * as pdfjsLib from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs';
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
+
+        const container = document.getElementById('pdf-container');
+        const loading = document.getElementById('loading');
+        const pdfUrl = 'ComputeCommons_Declaration_v2.pdf';
+
+        async function renderPDF() {
+            try {
+                const pdf = await pdfjsLib.getDocument(pdfUrl).promise;
+                loading.style.display = 'none';
+                const scale = 1.5;
+                for (let i = 1; i <= pdf.numPages; i++) {
+                    const page = await pdf.getPage(i);
+                    const viewport = page.getViewport({ scale });
+                    const canvas = document.createElement('canvas');
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+                    canvas.className = 'page-break';
+                    container.appendChild(canvas);
+                    const ctx = canvas.getContext('2d');
+                    await page.render({ canvasContext: ctx, viewport }).promise;
+                }
+            } catch (err) {
+                loading.textContent = 'Failed to load PDF: ' + err.message;
+            }
+        }
+        renderPDF();
+    </script>
+</body>
+</html>
